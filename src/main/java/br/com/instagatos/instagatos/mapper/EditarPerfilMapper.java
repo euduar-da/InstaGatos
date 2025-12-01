@@ -5,6 +5,10 @@ import br.com.instagatos.instagatos.domain.Usuario;
 
 public class EditarPerfilMapper {
 
+    private EditarPerfilMapper() {
+        throw new IllegalStateException("Utility class");
+    }
+
     public static UsuarioResponse toResponse(Usuario entity) {
         if (entity == null) {
             return null;

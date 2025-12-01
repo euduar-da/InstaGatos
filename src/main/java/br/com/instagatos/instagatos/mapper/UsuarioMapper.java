@@ -6,6 +6,9 @@ import br.com.instagatos.instagatos.domain.Usuario;
 
 public class UsuarioMapper {
 
+    private UsuarioMapper() {
+        throw new IllegalStateException("Utility class");
+    }
     public static Usuario toEntity(UsuarioRequest request) {
         if (request == null) {
             return null;

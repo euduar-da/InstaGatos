@@ -10,7 +10,9 @@ import java.time.LocalDateTime;
 
 public class IncluirPostMapper {
 
-
+    private IncluirPostMapper() {
+        throw new IllegalStateException("Utility class");
+    }
     public static Post toEntity(IncluirPostRequest request, Usuario autor) {
         Post entity = new Post();
         entity.setTextoPost(request.getTextoPost());

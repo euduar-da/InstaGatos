@@ -5,6 +5,9 @@ import br.com.instagatos.instagatos.domain.Amizade;
 
 public class AmizadeMapper {
 
+    private AmizadeMapper() {
+        throw new IllegalStateException("Utility class");
+    }
     public static SolicitarAmizadeResponse toResponse(Amizade amizade) {
         if (amizade == null) {
             return null;

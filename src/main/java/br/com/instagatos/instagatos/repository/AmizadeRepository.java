@@ -2,7 +2,6 @@ package br.com.instagatos.instagatos.repository;
 
 import br.com.instagatos.instagatos.controller.response.ListarSolicitacoesResponse;
 import br.com.instagatos.instagatos.domain.Amizade;
-import br.com.instagatos.instagatos.domain.Usuario;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;

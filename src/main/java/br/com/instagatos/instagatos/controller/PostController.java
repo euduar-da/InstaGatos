@@ -65,7 +65,7 @@ public class PostController {
     }
 
     @DeleteMapping("/{postId}/curtir")
-    public ResponseEntity<Void> RemoverCurtidaPost(@PathVariable Long postId, @AuthenticationPrincipal Jwt jwt) {
+    public ResponseEntity<Void> removerCurtidaPost(@PathVariable Long postId, @AuthenticationPrincipal Jwt jwt) {
         Long usuarioId = Long.parseLong(jwt.getSubject());
         removerCurtidaService.descurtirPost(usuarioId, postId);
         return ResponseEntity.ok().build();

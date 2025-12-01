@@ -4,6 +4,10 @@ import br.com.instagatos.instagatos.controller.response.BuscarAmigosResponse;
 import br.com.instagatos.instagatos.domain.Usuario;
 
 public class BuscarAmigosMapper {
+    
+    private BuscarAmigosMapper() {
+        throw new IllegalStateException("Utility class");
+    }
     public static BuscarAmigosResponse toResponse(Usuario usuario) {
         if (usuario == null) {
             return null;

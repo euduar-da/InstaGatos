@@ -10,7 +10,7 @@ import java.time.LocalDate;
 import static org.assertj.core.api.AssertionsForClassTypes.assertThat;
 import static org.junit.jupiter.api.Assertions.assertNull;
 
-public class UsuarioMapperTest {
+class UsuarioMapperTest {
 
 
     @Test
