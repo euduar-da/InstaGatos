@@ -1,0 +1,527 @@
+type: collection.insomnia.rest/5.0
+name: Instagatos
+meta:
+  id: wrk_95686aed41f34118bf2d457af87e1f9a
+  created: 1759547544963
+  modified: 1759547544963
+  description: ""
+collection:
+  - name: Usuário
+    meta:
+      id: fld_beb40f36c19f4954b56bfd6abceb9767
+      created: 1759547603557
+      modified: 1759691335521
+      sortKey: -1759547603557
+      description: ""
+    children:
+      - url: http://localhost:8080/usuarios
+        name: Incluir usuario
+        meta:
+          id: req_f4f7d109deb94318820580ff36c1456e
+          created: 1759547863536
+          modified: 1759715541213
+          isPrivate: false
+          description: ""
+          sortKey: -1759549416650
+        method: POST
+        body:
+          mimeType: application/json
+          text: |-
+            {
+            	"nomeCompleto": "Alex Teste",
+            	"email": "Alex@cwi.com.br",
+            	"apelido": "Ale",
+            	"dataNascimento": "2004-10-04",
+            	"senha": "123456"
+
+
+            }
+        headers:
+          - name: Content-Type
+            value: application/json
+          - name: User-Agent
+            value: insomnia/11.6.1
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+  - name: Autenticação
+    meta:
+      id: fld_ecece4bdc36c4a36987eb2ead4bbf4b6
+      created: 1759549428705
+      modified: 1759636343473
+      sortKey: -1759549428705
+      description: ""
+    children:
+      - url: http://localhost:8080/login
+        name: Login
+        meta:
+          id: req_0a8fac96fd4a4f45a68fd3873afd9066
+          created: 1759549164325
+          modified: 1759717056245
+          isPrivate: false
+          description: ""
+          sortKey: -1759549441234
+        method: POST
+        body:
+          mimeType: application/json
+          text: |-
+            {
+            	"email":  "Alex@cwi.com.br",
+            	
+              "senha": "123456"
+            }
+        headers:
+          - name: Content-Type
+            value: application/json
+          - name: User-Agent
+            value: insomnia/11.6.1
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+  - name: Dashboard - Tela Principal
+    meta:
+      id: fld_4fbeafca46c347749d75ca661ac0b50f
+      created: 1759549459143
+      modified: 1759597494951
+      sortKey: -1759549459143
+      description: ""
+    children:
+      - url: http://localhost:8080/dashboard
+        name: Dashboard
+        meta:
+          id: req_f91e27496b544654a4e387ca52fe5c09
+          created: 1759630732954
+          modified: 1759715631729
+          isPrivate: false
+          description: ""
+          sortKey: -1759630732954
+        method: GET
+        headers:
+          - name: User-Agent
+            value: insomnia/11.6.1
+        authentication:
+          type: bearer
+          token: eyJhbGciOiJSUzI1NiJ9.eyJpc3MiOiJzZWd1cmFuY2EtYXBpIiwic3ViIjoiMSIsImV4cCI6MTc1OTc3NTYxNywiaWF0IjoxNzU5NzE1NjE3LCJlbWFpbCI6ImVkdWFyZGFAY3dpLmNvbS5iciJ9.DyOV5wrfzhn7vj7FQ1DiuJgu0A1s4WKDFw90pdYfqNv3W4lYcIFbOCNhXXse_VAaRZCLmmCRKJ0sjfcb8v97bLSMSWu07dUOLclCSpWudsUVMKjtQJsO_J1Az0iTHoPQB76-ADzHSvH2HmaoHIF3rhJs_6H5jz90lO2FbCMDPiacNxR4acZCLGm96byefsYt581TJYDt-dYticQESkOMEZ1zV3jOwtjaucEaXEmgnvGCtBYwPK-IbOdXLCxxR_VbiwcamRmcYVgGXULcKhmMQtvyNNY91WYJGeU_EaxZJrAKn_8ybPyyTfzs6kNc07yDpJXE2QSIeNpUUc3by0iKWA
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+  - name: Editar perfil
+    meta:
+      id: fld_06230851dc504c1da7aea401750aa1fa
+      created: 1759594008841
+      modified: 1759597503058
+      sortKey: -1759594008841
+      description: ""
+    children:
+      - url: http://localhost:8080/usuarios/meu-perfil
+        name: Editar perfil
+        meta:
+          id: req_8857eb54815c46b8bcff1a43e1ea5b6d
+          created: 1759597479896
+          modified: 1759715644184
+          isPrivate: false
+          description: ""
+          sortKey: -1759597479896
+        method: PATCH
+        body:
+          mimeType: application/json
+          text: |-
+            {
+
+            "urlImagem": "http://adidas.br.com"
+            }
+        headers:
+          - name: Content-Type
+            value: application/json
+          - name: User-Agent
+            value: insomnia/11.6.1
+        authentication:
+          type: bearer
+          token: eyJhbGciOiJSUzI1NiJ9.eyJpc3MiOiJzZWd1cmFuY2EtYXBpIiwic3ViIjoiMSIsImV4cCI6MTc1OTc3NTYxNywiaWF0IjoxNzU5NzE1NjE3LCJlbWFpbCI6ImVkdWFyZGFAY3dpLmNvbS5iciJ9.DyOV5wrfzhn7vj7FQ1DiuJgu0A1s4WKDFw90pdYfqNv3W4lYcIFbOCNhXXse_VAaRZCLmmCRKJ0sjfcb8v97bLSMSWu07dUOLclCSpWudsUVMKjtQJsO_J1Az0iTHoPQB76-ADzHSvH2HmaoHIF3rhJs_6H5jz90lO2FbCMDPiacNxR4acZCLGm96byefsYt581TJYDt-dYticQESkOMEZ1zV3jOwtjaucEaXEmgnvGCtBYwPK-IbOdXLCxxR_VbiwcamRmcYVgGXULcKhmMQtvyNNY91WYJGeU_EaxZJrAKn_8ybPyyTfzs6kNc07yDpJXE2QSIeNpUUc3by0iKWA
+          disabled: false
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+  - name: Amizades
+    meta:
+      id: fld_30b7ab753fce46949e77baea06d6bf10
+      created: 1759616150532
+      modified: 1759616150532
+      sortKey: -1759616150532
+      description: ""
+    children:
+      - url: http://localhost:8080/usuarios/buscar
+        name: buscar usuarios
+        meta:
+          id: req_ec89e2f82950421ba19568e17ffa15bd
+          created: 1759597484623
+          modified: 1759715740020
+          isPrivate: false
+          description: ""
+          sortKey: -1759617027388
+        method: POST
+        body:
+          mimeType: application/json
+          text: |-
+            {
+            	"termo": "", 
+
+            	"termo": "t"
+            }
+        headers:
+          - name: Content-Type
+            value: application/json
+          - name: User-Agent
+            value: insomnia/11.6.1
+        authentication:
+          type: bearer
+          token: eyJhbGciOiJSUzI1NiJ9.eyJpc3MiOiJzZWd1cmFuY2EtYXBpIiwic3ViIjoiMSIsImV4cCI6MTc1OTc3NTYxNywiaWF0IjoxNzU5NzE1NjE3LCJlbWFpbCI6ImVkdWFyZGFAY3dpLmNvbS5iciJ9.DyOV5wrfzhn7vj7FQ1DiuJgu0A1s4WKDFw90pdYfqNv3W4lYcIFbOCNhXXse_VAaRZCLmmCRKJ0sjfcb8v97bLSMSWu07dUOLclCSpWudsUVMKjtQJsO_J1Az0iTHoPQB76-ADzHSvH2HmaoHIF3rhJs_6H5jz90lO2FbCMDPiacNxR4acZCLGm96byefsYt581TJYDt-dYticQESkOMEZ1zV3jOwtjaucEaXEmgnvGCtBYwPK-IbOdXLCxxR_VbiwcamRmcYVgGXULcKhmMQtvyNNY91WYJGeU_EaxZJrAKn_8ybPyyTfzs6kNc07yDpJXE2QSIeNpUUc3by0iKWA
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: http://localhost:8080/amizades/solicitacoes/recebidas
+        name: listar pedidos pendentes
+        meta:
+          id: req_9a939648834e4390a382d1bf0fe06098
+          created: 1759597505855
+          modified: 1759715664976
+          isPrivate: false
+          description: ""
+          sortKey: -1759617027288
+        method: GET
+        headers:
+          - name: User-Agent
+            value: insomnia/11.6.1
+        authentication:
+          type: bearer
+          token: eyJhbGciOiJSUzI1NiJ9.eyJpc3MiOiJzZWd1cmFuY2EtYXBpIiwic3ViIjoiMSIsImV4cCI6MTc1OTc3NTYxNywiaWF0IjoxNzU5NzE1NjE3LCJlbWFpbCI6ImVkdWFyZGFAY3dpLmNvbS5iciJ9.DyOV5wrfzhn7vj7FQ1DiuJgu0A1s4WKDFw90pdYfqNv3W4lYcIFbOCNhXXse_VAaRZCLmmCRKJ0sjfcb8v97bLSMSWu07dUOLclCSpWudsUVMKjtQJsO_J1Az0iTHoPQB76-ADzHSvH2HmaoHIF3rhJs_6H5jz90lO2FbCMDPiacNxR4acZCLGm96byefsYt581TJYDt-dYticQESkOMEZ1zV3jOwtjaucEaXEmgnvGCtBYwPK-IbOdXLCxxR_VbiwcamRmcYVgGXULcKhmMQtvyNNY91WYJGeU_EaxZJrAKn_8ybPyyTfzs6kNc07yDpJXE2QSIeNpUUc3by0iKWA
+          disabled: false
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: http://localhost:8080/amizades/solicitar-amizade
+        name: adicionar amigos
+        meta:
+          id: req_748f62631c7948b6be9d8545470c5f84
+          created: 1759692731067
+          modified: 1759715755285
+          isPrivate: false
+          description: ""
+          sortKey: -1759692731067
+        method: POST
+        body:
+          mimeType: application/json
+          text: |-
+            {
+            	"solicitadoId": 3
+            }
+        headers:
+          - name: Content-Type
+            value: application/json
+          - name: User-Agent
+            value: insomnia/11.6.1
+        authentication:
+          type: bearer
+          token: eyJhbGciOiJSUzI1NiJ9.eyJpc3MiOiJzZWd1cmFuY2EtYXBpIiwic3ViIjoiMSIsImV4cCI6MTc1OTc3NTYxNywiaWF0IjoxNzU5NzE1NjE3LCJlbWFpbCI6ImVkdWFyZGFAY3dpLmNvbS5iciJ9.DyOV5wrfzhn7vj7FQ1DiuJgu0A1s4WKDFw90pdYfqNv3W4lYcIFbOCNhXXse_VAaRZCLmmCRKJ0sjfcb8v97bLSMSWu07dUOLclCSpWudsUVMKjtQJsO_J1Az0iTHoPQB76-ADzHSvH2HmaoHIF3rhJs_6H5jz90lO2FbCMDPiacNxR4acZCLGm96byefsYt581TJYDt-dYticQESkOMEZ1zV3jOwtjaucEaXEmgnvGCtBYwPK-IbOdXLCxxR_VbiwcamRmcYVgGXULcKhmMQtvyNNY91WYJGeU_EaxZJrAKn_8ybPyyTfzs6kNc07yDpJXE2QSIeNpUUc3by0iKWA
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: http://localhost:8080/amizades/listar?termo=e
+        name: listar amigos com filtro
+        meta:
+          id: req_2c5284d6a5d04540b1ce1e1644e9002d
+          created: 1759708083329
+          modified: 1759715845945
+          isPrivate: false
+          description: ""
+          sortKey: -1759708083329
+        method: GET
+        headers:
+          - name: User-Agent
+            value: insomnia/11.6.1
+        authentication:
+          type: bearer
+          token: eyJhbGciOiJSUzI1NiJ9.eyJpc3MiOiJzZWd1cmFuY2EtYXBpIiwic3ViIjoiMSIsImV4cCI6MTc1OTc3NTYxNywiaWF0IjoxNzU5NzE1NjE3LCJlbWFpbCI6ImVkdWFyZGFAY3dpLmNvbS5iciJ9.DyOV5wrfzhn7vj7FQ1DiuJgu0A1s4WKDFw90pdYfqNv3W4lYcIFbOCNhXXse_VAaRZCLmmCRKJ0sjfcb8v97bLSMSWu07dUOLclCSpWudsUVMKjtQJsO_J1Az0iTHoPQB76-ADzHSvH2HmaoHIF3rhJs_6H5jz90lO2FbCMDPiacNxR4acZCLGm96byefsYt581TJYDt-dYticQESkOMEZ1zV3jOwtjaucEaXEmgnvGCtBYwPK-IbOdXLCxxR_VbiwcamRmcYVgGXULcKhmMQtvyNNY91WYJGeU_EaxZJrAKn_8ybPyyTfzs6kNc07yDpJXE2QSIeNpUUc3by0iKWA
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: http://localhost:8080/amizades/listar
+        name: listar amigos
+        meta:
+          id: req_1682eff4a09246daaebe717a10af41cb
+          created: 1759710050202
+          modified: 1759715859654
+          isPrivate: false
+          description: ""
+          sortKey: -1759710050202
+        method: GET
+        headers:
+          - name: User-Agent
+            value: insomnia/11.6.1
+        authentication:
+          type: bearer
+          token: eyJhbGciOiJSUzI1NiJ9.eyJpc3MiOiJzZWd1cmFuY2EtYXBpIiwic3ViIjoiMSIsImV4cCI6MTc1OTc3NTYxNywiaWF0IjoxNzU5NzE1NjE3LCJlbWFpbCI6ImVkdWFyZGFAY3dpLmNvbS5iciJ9.DyOV5wrfzhn7vj7FQ1DiuJgu0A1s4WKDFw90pdYfqNv3W4lYcIFbOCNhXXse_VAaRZCLmmCRKJ0sjfcb8v97bLSMSWu07dUOLclCSpWudsUVMKjtQJsO_J1Az0iTHoPQB76-ADzHSvH2HmaoHIF3rhJs_6H5jz90lO2FbCMDPiacNxR4acZCLGm96byefsYt581TJYDt-dYticQESkOMEZ1zV3jOwtjaucEaXEmgnvGCtBYwPK-IbOdXLCxxR_VbiwcamRmcYVgGXULcKhmMQtvyNNY91WYJGeU_EaxZJrAKn_8ybPyyTfzs6kNc07yDpJXE2QSIeNpUUc3by0iKWA
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: http://localhost:8080/amizades/4
+        name: remover amizade
+        meta:
+          id: req_395d1a0adee94adeb1ec04ce516e0c45
+          created: 1759710109862
+          modified: 1759715879806
+          isPrivate: false
+          description: ""
+          sortKey: -1759710109862
+        method: DELETE
+        headers:
+          - name: User-Agent
+            value: insomnia/11.6.1
+        authentication:
+          type: bearer
+          token: eyJhbGciOiJSUzI1NiJ9.eyJpc3MiOiJzZWd1cmFuY2EtYXBpIiwic3ViIjoiMSIsImV4cCI6MTc1OTc3NTYxNywiaWF0IjoxNzU5NzE1NjE3LCJlbWFpbCI6ImVkdWFyZGFAY3dpLmNvbS5iciJ9.DyOV5wrfzhn7vj7FQ1DiuJgu0A1s4WKDFw90pdYfqNv3W4lYcIFbOCNhXXse_VAaRZCLmmCRKJ0sjfcb8v97bLSMSWu07dUOLclCSpWudsUVMKjtQJsO_J1Az0iTHoPQB76-ADzHSvH2HmaoHIF3rhJs_6H5jz90lO2FbCMDPiacNxR4acZCLGm96byefsYt581TJYDt-dYticQESkOMEZ1zV3jOwtjaucEaXEmgnvGCtBYwPK-IbOdXLCxxR_VbiwcamRmcYVgGXULcKhmMQtvyNNY91WYJGeU_EaxZJrAKn_8ybPyyTfzs6kNc07yDpJXE2QSIeNpUUc3by0iKWA
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+  - name: Post
+    meta:
+      id: fld_86581180b4b54064bf7a90fd5bf514e2
+      created: 1759636365139
+      modified: 1759683537983
+      sortKey: -1759636365139
+      description: ""
+    children:
+      - url: http://localhost:8080/posts
+        name: incluir posts
+        meta:
+          id: req_9ac0b27c23734b4f97c5b8f94e2a60c9
+          created: 1759636436275
+          modified: 1759716000345
+          isPrivate: false
+          description: ""
+          sortKey: -1759636436275
+        method: POST
+        body:
+          mimeType: application/json
+          text: |-
+            {
+            	"textoPost": "Gato fofo dormindo",
+            	"permissaoVisualizacao": "PUBLICO",
+            	"urlImagemPost": "gatinhofofo.com"
+            }
+        headers:
+          - name: Content-Type
+            value: application/json
+          - name: User-Agent
+            value: insomnia/11.6.1
+        authentication:
+          type: bearer
+          token: eyJhbGciOiJSUzI1NiJ9.eyJpc3MiOiJzZWd1cmFuY2EtYXBpIiwic3ViIjoiMSIsImV4cCI6MTc1OTc3NTYxNywiaWF0IjoxNzU5NzE1NjE3LCJlbWFpbCI6ImVkdWFyZGFAY3dpLmNvbS5iciJ9.DyOV5wrfzhn7vj7FQ1DiuJgu0A1s4WKDFw90pdYfqNv3W4lYcIFbOCNhXXse_VAaRZCLmmCRKJ0sjfcb8v97bLSMSWu07dUOLclCSpWudsUVMKjtQJsO_J1Az0iTHoPQB76-ADzHSvH2HmaoHIF3rhJs_6H5jz90lO2FbCMDPiacNxR4acZCLGm96byefsYt581TJYDt-dYticQESkOMEZ1zV3jOwtjaucEaXEmgnvGCtBYwPK-IbOdXLCxxR_VbiwcamRmcYVgGXULcKhmMQtvyNNY91WYJGeU_EaxZJrAKn_8ybPyyTfzs6kNc07yDpJXE2QSIeNpUUc3by0iKWA
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: http://localhost:8080/posts
+        name: listar feed
+        meta:
+          id: req_416e14624a0949f8be3351687f61b4fa
+          created: 1759673563022
+          modified: 1759716233556
+          isPrivate: false
+          description: ""
+          sortKey: -1759673563022
+        method: GET
+        headers:
+          - name: User-Agent
+            value: insomnia/11.6.1
+        authentication:
+          type: bearer
+          token: eyJhbGciOiJSUzI1NiJ9.eyJpc3MiOiJzZWd1cmFuY2EtYXBpIiwic3ViIjoiMSIsImV4cCI6MTc1OTc3NTYxNywiaWF0IjoxNzU5NzE1NjE3LCJlbWFpbCI6ImVkdWFyZGFAY3dpLmNvbS5iciJ9.DyOV5wrfzhn7vj7FQ1DiuJgu0A1s4WKDFw90pdYfqNv3W4lYcIFbOCNhXXse_VAaRZCLmmCRKJ0sjfcb8v97bLSMSWu07dUOLclCSpWudsUVMKjtQJsO_J1Az0iTHoPQB76-ADzHSvH2HmaoHIF3rhJs_6H5jz90lO2FbCMDPiacNxR4acZCLGm96byefsYt581TJYDt-dYticQESkOMEZ1zV3jOwtjaucEaXEmgnvGCtBYwPK-IbOdXLCxxR_VbiwcamRmcYVgGXULcKhmMQtvyNNY91WYJGeU_EaxZJrAKn_8ybPyyTfzs6kNc07yDpJXE2QSIeNpUUc3by0iKWA
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: http://localhost:8080/posts/1/curtir
+        name: adicionar curtida
+        meta:
+          id: req_4551d969c74b49deaeee1e71e42cd4f8
+          created: 1759683535090
+          modified: 1759716259650
+          isPrivate: false
+          description: ""
+          sortKey: -1759673563122
+        method: POST
+        headers:
+          - name: User-Agent
+            value: insomnia/11.6.1
+        authentication:
+          type: bearer
+          token: eyJhbGciOiJSUzI1NiJ9.eyJpc3MiOiJzZWd1cmFuY2EtYXBpIiwic3ViIjoiMSIsImV4cCI6MTc1OTc3NTYxNywiaWF0IjoxNzU5NzE1NjE3LCJlbWFpbCI6ImVkdWFyZGFAY3dpLmNvbS5iciJ9.DyOV5wrfzhn7vj7FQ1DiuJgu0A1s4WKDFw90pdYfqNv3W4lYcIFbOCNhXXse_VAaRZCLmmCRKJ0sjfcb8v97bLSMSWu07dUOLclCSpWudsUVMKjtQJsO_J1Az0iTHoPQB76-ADzHSvH2HmaoHIF3rhJs_6H5jz90lO2FbCMDPiacNxR4acZCLGm96byefsYt581TJYDt-dYticQESkOMEZ1zV3jOwtjaucEaXEmgnvGCtBYwPK-IbOdXLCxxR_VbiwcamRmcYVgGXULcKhmMQtvyNNY91WYJGeU_EaxZJrAKn_8ybPyyTfzs6kNc07yDpJXE2QSIeNpUUc3by0iKWA
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: http://localhost:8080/posts/1/curtir
+        name: remover curtida
+        meta:
+          id: req_1df8e8d0ed0d45e0bbab6e42a23410d1
+          created: 1759683555368
+          modified: 1759716272639
+          isPrivate: false
+          description: ""
+          sortKey: -1759683555368
+        method: DELETE
+        headers:
+          - name: User-Agent
+            value: insomnia/11.6.1
+        authentication:
+          type: bearer
+          token: eyJhbGciOiJSUzI1NiJ9.eyJpc3MiOiJzZWd1cmFuY2EtYXBpIiwic3ViIjoiMSIsImV4cCI6MTc1OTc3NTYxNywiaWF0IjoxNzU5NzE1NjE3LCJlbWFpbCI6ImVkdWFyZGFAY3dpLmNvbS5iciJ9.DyOV5wrfzhn7vj7FQ1DiuJgu0A1s4WKDFw90pdYfqNv3W4lYcIFbOCNhXXse_VAaRZCLmmCRKJ0sjfcb8v97bLSMSWu07dUOLclCSpWudsUVMKjtQJsO_J1Az0iTHoPQB76-ADzHSvH2HmaoHIF3rhJs_6H5jz90lO2FbCMDPiacNxR4acZCLGm96byefsYt581TJYDt-dYticQESkOMEZ1zV3jOwtjaucEaXEmgnvGCtBYwPK-IbOdXLCxxR_VbiwcamRmcYVgGXULcKhmMQtvyNNY91WYJGeU_EaxZJrAKn_8ybPyyTfzs6kNc07yDpJXE2QSIeNpUUc3by0iKWA
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: http://localhost:8080/posts/1/comentar
+        name: adicionar comentario
+        meta:
+          id: req_7e55bf9eadb84ee2b3869abd9205a251
+          created: 1759684400612
+          modified: 1759717099099
+          isPrivate: false
+          description: ""
+          sortKey: -1759684400612
+        method: POST
+        body:
+          mimeType: application/json
+          text: |+
+            {
+            	"textoComentario": "Lindoooo!!!"
+            }
+            	
+        headers:
+          - name: Content-Type
+            value: application/json
+          - name: User-Agent
+            value: insomnia/11.6.1
+        authentication:
+          type: bearer
+          token: eyJhbGciOiJSUzI1NiJ9.eyJpc3MiOiJzZWd1cmFuY2EtYXBpIiwic3ViIjoiMyIsImV4cCI6MTc1OTc3NzA2NywiaWF0IjoxNzU5NzE3MDY3LCJlbWFpbCI6IkFsZXhAY3dpLmNvbS5iciJ9.QUiHusKu-7QIA4V6_TRMJQcofN5gH-i8sIPagb2vONOmrVG2tznmw1zh4fm8Phv5g5wEkuXf36trjVn0YJi2fRxHu-YImplw7Q-xk_yuB2sbSGJAg85GZNWVOBByBojBqP3JsPSfkTebpKzzpAyLkAS-zdNlSuM7FY3F4yaUB89VeUlVhfstW7zFRX08zpUiw_NUoySJcjdMpqyYDbYZqVtDxDhbvJqMr3H3gqlbEpppkb0bwRafZwVpNKSo3-1KSTvzMRn5raBoxsDKcPPoV_KiET9s3yneP5TUaSWj0A2-5n3XB2L-3Cya8UPxA4Ab7eF8OT3a-e1YGp_gzs6e3g
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+      - url: http://localhost:8080/posts/1/permissao
+        name: alterar permissao
+        meta:
+          id: req_01770af8c97e4377b725dc074438d307
+          created: 1759687938851
+          modified: 1759717120373
+          isPrivate: false
+          description: ""
+          sortKey: -1759687938851
+        method: PUT
+        body:
+          mimeType: application/json
+          text: |-
+            {
+            	"permissao": "PRIVADO"
+            }
+        headers:
+          - name: Content-Type
+            value: application/json
+          - name: User-Agent
+            value: insomnia/11.6.1
+        authentication:
+          type: bearer
+          token: eyJhbGciOiJSUzI1NiJ9.eyJpc3MiOiJzZWd1cmFuY2EtYXBpIiwic3ViIjoiMyIsImV4cCI6MTc1OTc3NzA2NywiaWF0IjoxNzU5NzE3MDY3LCJlbWFpbCI6IkFsZXhAY3dpLmNvbS5iciJ9.QUiHusKu-7QIA4V6_TRMJQcofN5gH-i8sIPagb2vONOmrVG2tznmw1zh4fm8Phv5g5wEkuXf36trjVn0YJi2fRxHu-YImplw7Q-xk_yuB2sbSGJAg85GZNWVOBByBojBqP3JsPSfkTebpKzzpAyLkAS-zdNlSuM7FY3F4yaUB89VeUlVhfstW7zFRX08zpUiw_NUoySJcjdMpqyYDbYZqVtDxDhbvJqMr3H3gqlbEpppkb0bwRafZwVpNKSo3-1KSTvzMRn5raBoxsDKcPPoV_KiET9s3yneP5TUaSWj0A2-5n3XB2L-3Cya8UPxA4Ab7eF8OT3a-e1YGp_gzs6e3g
+        settings:
+          renderRequestBody: true
+          encodeUrl: true
+          followRedirects: global
+          cookies:
+            send: true
+            store: true
+          rebuildPath: true
+cookieJar:
+  name: Default Jar
+  meta:
+    id: jar_9c23d74e246109773425bf9aa82cbe67137a0fd8
+    created: 1759547544977
+    modified: 1759547544977
+environments:
+  name: Base Environment
+  meta:
+    id: env_9c23d74e246109773425bf9aa82cbe67137a0fd8
+    created: 1759547544973
+    modified: 1759547544973
+    isPrivate: false
